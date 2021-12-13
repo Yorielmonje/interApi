@@ -1,0 +1,37 @@
+<div class ="container color-dark">
+  
+  <div class = "col">
+   
+    <p>Agrega una marca de juguito</p>
+  
+  </div>
+ 
+  <div class = "col">
+  
+    <p>Lista de Jugos</p>
+  
+  </div>
+
+</div>
+<div class ="container color-ligth" [@goals]="goals.length ">
+  
+    <div class = "col">
+     
+      <p class="sm">Añade un jugo</p>
+      <form>
+        <input type="text" class="txt" name="item" placeholder="Life goal..." [(ngModel)]= "goalText">
+        
+        
+        <input type="submit" class ="btn" value="{{ btntxt }}" (click)="AgregarMeta()">
+      </form>
+    </div>
+   
+    <div class = "col">
+     <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+
+        {{goal.marca}}
+      </p>
+    
+    </div>
+  
+  </div>
